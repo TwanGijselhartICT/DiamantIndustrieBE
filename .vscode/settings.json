@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "Controller",
+        "demo/src/main/java/com/backend/demo"
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
+}
