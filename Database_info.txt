@@ -1,0 +1,17 @@
+RemoteMySql DB gegevens:
+
+Username: YXSEnyGGAQ
+
+Database name: YXSEnyGGAQ
+
+Password: 39m6L8WXdh
+
+Server: remotemysql.com
+
+Port: 3306
+
+
+https://remotemysql.com/phpmyadmin/index.php?db=YXSEnyGGAQ
+
+username: YXSEnyGGAQ
+password: 39m6L8WXdh
