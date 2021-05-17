@@ -9,5 +9,5 @@ public class DiamantindustrieApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DiamantindustrieApplication.class, args);
 	}
-
+//werkt dit??
 }
