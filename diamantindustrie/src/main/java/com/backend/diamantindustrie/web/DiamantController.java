@@ -23,4 +23,11 @@ public class DiamantController {
         return ResponseEntity.ok(todoItems);
     }
 
+    @GetMapping("/api/poiNames")
+    public ResponseEntity<?> fetchAllPOINames(){
+
+        return ResponseEntity.ok("");
+    }
+
+
 }
