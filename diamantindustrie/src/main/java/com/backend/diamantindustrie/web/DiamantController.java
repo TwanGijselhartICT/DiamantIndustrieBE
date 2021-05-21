@@ -1,7 +1,10 @@
 package com.backend.diamantindustrie.web;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
+import com.backend.diamantindustrie.SelectQuery;
 import com.backend.diamantindustrie.domain.ToDoItem;
 import com.backend.diamantindustrie.service.*;
 
@@ -23,10 +26,18 @@ public class DiamantController {
         return ResponseEntity.ok(todoItems);
     }
 
-    @GetMapping("/api/poiNames")
+    @GetMapping("/api/poi/Names")
     public ResponseEntity<?> fetchAllPOINames(){
+        SelectQuery selectQuery = new SelectQuery();
+        String object = selectQuery.GetResultSet("select Name from pointofinterest");
+        return ResponseEntity.ok(object);
+    }
 
-        return ResponseEntity.ok("");
+    @GetMapping("/api/poi")
+    public ResponseEntity<?> FetchAllPOIInfo(){
+        SelectQuery selectQuery = new SelectQuery();
+        String object = selectQuery.GetResultSet("select * from pointofinterest");
+        return ResponseEntity.ok(object);
     }
 
 
