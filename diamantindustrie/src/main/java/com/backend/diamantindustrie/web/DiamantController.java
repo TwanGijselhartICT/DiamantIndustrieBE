@@ -19,18 +19,22 @@ public class DiamantController {
     @Autowired
     private ToDoService todoService;
 
+    @Autowired
+    private PointOfInterestService pointOfInterestService;
+
     @GetMapping("/api/todoItems")
-    public ResponseEntity<?> fetchAllToDoItems() {
+    public ResponseEntity<List<ToDoItem>> fetchAllToDoItems() {
         List<ToDoItem> todoItems = todoService.fetchAllToDoItems();
 
         return ResponseEntity.ok(todoItems);
     }
 
-    @GetMapping("/api/poi/Names")
+    @GetMapping("/api/poi/names")
     public ResponseEntity<?> fetchAllPOINames(){
-        SelectQuery selectQuery = new SelectQuery();
+        /*SelectQuery selectQuery = new SelectQuery();
         String object = selectQuery.GetResultSet("select Name from pointofinterest");
-        return ResponseEntity.ok(object);
+        return ResponseEntity.ok(object);*/
+        return ResponseEntity.ok(pointOfInterestService.FetchAllPointOfInterest());
     }
 
     @GetMapping("/api/poi")

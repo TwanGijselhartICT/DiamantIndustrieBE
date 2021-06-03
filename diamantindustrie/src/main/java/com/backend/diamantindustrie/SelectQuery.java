@@ -1,7 +1,6 @@
 package com.backend.diamantindustrie;
 
 import java.sql.*;
-import java.util.List;
 
 public class SelectQuery {
 
