@@ -77,7 +77,6 @@ public class PointOfInterest {
         Lat = lat;
     }
 
-
     @Override
     public String toString() {
         return "PointOfInterest{" +
