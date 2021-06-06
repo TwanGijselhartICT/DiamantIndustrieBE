@@ -4,7 +4,9 @@ import com.backend.diamantindustrie.domain.User;
 import com.backend.diamantindustrie.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.Random;
+
+import java.util.List;
+
 @Service
 public class UserService {
     @Autowired
@@ -19,7 +21,19 @@ public class UserService {
         return "Username: " + userName + " met leeftijd: " + age + " is succesvol toegevoegd aan de database!";
     }
 
-    public void CheckIfUserExists(String userName){
+    public String CheckIfUserAndAgeExists(String userName, int age){
+        String ValueToReturn = "";
+
+        String dbUserName = userRepository.findByUserNameAndAge(userName, age);
+
+        if(userRepository.findByUserNameAndAge(userName, age) instanceof String) {
+            if (userName.equals(dbUserName)) {
+                ValueToReturn = "true";
+            } else ValueToReturn = "false";
+        }
+        else ValueToReturn = "false";
+
+        return (ValueToReturn);
 
     }
 
