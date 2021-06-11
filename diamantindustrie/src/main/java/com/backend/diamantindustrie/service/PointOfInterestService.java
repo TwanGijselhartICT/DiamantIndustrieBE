@@ -1,6 +1,6 @@
 package com.backend.diamantindustrie.service;
 
-import com.backend.diamantindustrie.domain.PointOfInterest;
+import com.backend.diamantindustrie.domain.POI;
 import com.backend.diamantindustrie.repository.PointOfInterestRepository;
 import net.bytebuddy.asm.Advice;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ public class PointOfInterestService {
     @Autowired
     private PointOfInterestRepository PoiRepo;
 
-    public List<PointOfInterest> FetchAllPointOfInterest(){
+    public List<POI> FetchAllPointOfInterest(){
         return PoiRepo.findAll();
     }
 

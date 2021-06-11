@@ -13,8 +13,6 @@ public class UserService {
     private UserRepository userRepository;
 
     public String InsertUserIntoDB(String userName, int age){
-
-
         User user = new User(userName, age, 0);
 
         userRepository.save(user);
@@ -34,7 +32,19 @@ public class UserService {
         else ValueToReturn = "false";
 
         return (ValueToReturn);
+    }
+public String InsertDiamondIntoDB (String userName, int age, int collectedDiamonds)
+    {
+    User user = new User(userName, age, collectedDiamonds);
 
+    userRepository.save(user);
+    return "Succesvol: " + collectedDiamonds + " bijgewerkt in de database!";
     }
 
+public  String CheckDiamonds(String userName, int age)
+    {
+    String dbDiamonds = userRepository.findDiamonds(userName, age);
+
+    return dbDiamonds;
+    }
 }

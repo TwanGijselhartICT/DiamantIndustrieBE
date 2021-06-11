@@ -3,7 +3,7 @@ package com.backend.diamantindustrie.domain;
 import javax.persistence.*;
 
 @Entity(name = "pointofinterest")
-public class PointOfInterest {
+public class POI {
 
     @Id
     private int id;
@@ -15,7 +15,7 @@ public class PointOfInterest {
 
 
 
-    public PointOfInterest(int id, String name, String text, String address, String aLong, String lat) {
+    public POI(int id, String name, String text, String address, String aLong, String lat) {
         this.id = id;
         Name = name;
         Text = text;
@@ -24,7 +24,7 @@ public class PointOfInterest {
         Lat = lat;
     }
 
-    public PointOfInterest(){
+    public POI(){
 
     }
 
