@@ -35,19 +35,18 @@ public class DiamantController {
         return ResponseEntity.ok(userService.CheckIfUserAndAgeExists(customQuery.get("username"), Integer.parseInt(customQuery.get("age"))));
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "api/user/diamonds")
+    @RequestMapping(method = RequestMethod.GET, value = "api/diamonds")
     public  ResponseEntity<?> GetDiamonds(@RequestParam Map<String, String> customQuery)
     {
         return ResponseEntity.ok(userService.CheckDiamonds(customQuery.get("username"), Integer.parseInt(customQuery.get("age"))));
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "api/user/diamonds")
-    public ResponseEntity<?> UpdateDiamond (@RequestParam (defaultValue = "0") String userName, @RequestParam (defaultValue = "0") int age, @RequestParam (defaultValue = "0") int diamonds)
+    @RequestMapping(method = RequestMethod.PUT, value = "api/diamonds")
+    public ResponseEntity<?> UpdateDiamond (@RequestParam (defaultValue = "0") String username, @RequestParam (defaultValue = "0") int age, @RequestParam (defaultValue = "0") int diamonds)
     {
-        return ResponseEntity.ok(userService.InsertDiamondIntoDB(userName, age, diamonds));
+        return ResponseEntity.ok(userService.InsertDiamondIntoDB(username, age, diamonds));
     }
 
-
-
+    
 
 }
