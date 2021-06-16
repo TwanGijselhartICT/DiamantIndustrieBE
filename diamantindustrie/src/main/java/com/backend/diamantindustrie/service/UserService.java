@@ -5,10 +5,9 @@ import com.backend.diamantindustrie.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class UserService {
+
     @Autowired
     private UserRepository userRepository;
 
@@ -20,12 +19,12 @@ public class UserService {
     }
 
     public String CheckIfUserAndAgeExists(String userName, int age) {
-        String ValueToReturn = "";
+        String ValueToReturn;
 
         String dbUserName = userRepository.findByUserNameAndAge(userName, age);
 
-        if (userRepository.findByUserNameAndAge(userName, age) instanceof String) {
-            if (userName.equals(dbUserName)) {
+        if (userRepository.findByUserNameAndAge(userName, age) != null) {
+            if (userName.equalsIgnoreCase(dbUserName)) {
                 ValueToReturn = "true";
             } else ValueToReturn = "false";
         } else ValueToReturn = "false";
@@ -41,8 +40,7 @@ public class UserService {
     }
 
     public String CheckDiamonds(String userName, int age) {
-        String dbDiamonds = userRepository.findDiamonds(userName, age);
 
-        return dbDiamonds;
+        return userRepository.findDiamonds(userName, age);
     }
 }

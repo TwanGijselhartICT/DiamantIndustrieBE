@@ -3,22 +3,18 @@ package com.backend.diamantindustrie.web;
 import java.util.Map;
 
 import com.backend.diamantindustrie.service.*;
-
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class DiamantController {
+public class DiamondController {
 
     @Autowired
     private UserService userService;
 
     @Autowired
     private PointOfInterestService pointOfInterestService;
-
-
 
     @GetMapping("/api/poi")
     public ResponseEntity<?> fetchAllPOINames(){

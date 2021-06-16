@@ -1,6 +1,7 @@
 package com.backend.diamantindustrie.domain;
 
 import javax.persistence.*;
+import java.awt.*;
 
 @Entity(name = "pointofinterest")
 public class POI {
@@ -12,7 +13,6 @@ public class POI {
     private String Address;
     private String Long;
     private String Lat;
-
 
 
     public POI(int id, String name, String text, String address, String aLong, String lat) {
@@ -76,6 +76,8 @@ public class POI {
     public void setLat(String lat) {
         Lat = lat;
     }
+
+
 
     @Override
     public String toString() {
