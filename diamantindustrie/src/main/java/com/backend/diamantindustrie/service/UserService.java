@@ -32,7 +32,7 @@ public class UserService {
         return (ValueToReturn);
     }
 
-    public String InsertDiamondIntoDB(String userName, int age, int collectedDiamonds) {
+    public String UpdateDiamondsInDB(String userName, int age, int collectedDiamonds) {
         User user = new User(userName, age, collectedDiamonds);
 
         userRepository.save(user);

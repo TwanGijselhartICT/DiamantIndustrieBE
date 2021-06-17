@@ -40,7 +40,7 @@ public class DiamondController {
     @RequestMapping(method = RequestMethod.PUT, value = "api/diamonds")
     public ResponseEntity<?> UpdateDiamond (@RequestParam (defaultValue = "0") String username, @RequestParam (defaultValue = "0") int age, @RequestParam (defaultValue = "0") int diamonds)
     {
-        return ResponseEntity.ok(userService.InsertDiamondIntoDB(username, age, diamonds));
+        return ResponseEntity.ok(userService.UpdateDiamondsInDB(username, age, diamonds));
     }
 
     
