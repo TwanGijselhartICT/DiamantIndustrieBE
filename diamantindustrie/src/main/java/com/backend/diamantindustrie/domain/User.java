@@ -3,6 +3,7 @@ package com.backend.diamantindustrie.domain;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+//Database table
 @Entity(name = "user")
 public class User {
 

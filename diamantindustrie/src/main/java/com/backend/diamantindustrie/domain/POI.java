@@ -3,6 +3,7 @@ package com.backend.diamantindustrie.domain;
 import javax.persistence.*;
 import java.awt.*;
 
+//Database table
 @Entity(name = "pointofinterest")
 public class POI {
 
